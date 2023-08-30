@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_order_shipment_track_save_after">
+        <observer name="shipment_tracking_webhook" instance="Tik\TikConnector\Observer\ShipmentWebhook"/>
+    </event>
+    <event name="order_cancel_after">
+        <observer name="order_cancel_webhook" instance="Tik\TikConnector\Observer\OrderCancelWebhook"/>
+    </event>
+    <event name="checkout_submit_all_after">
+        <observer name="order_create_webhook" instance="Tik\TikConnector\Observer\OrderCreateWebhook"/>
+    </event>
+</config>

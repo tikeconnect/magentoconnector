@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Tik_TikConnector::connector" title="TikConnect" module="Tik_TikConnector" sortOrder="150" resource="Tik_TikConnector::connector"/>
+        <add id="Tik_TikConnector::index"
+             title="Connector Portal"
+             sortOrder="10"
+             module="Tik_TikConnector"
+             parent="Tik_TikConnector::connector"
+             action="tikconnector/index/index"
+             resource="Tik_TikConnector::manage_products"/>
+        <add id="Tik_TikConnector::products"
+             title="Manage Products Sync"
+             sortOrder="10"
+             module="Tik_TikConnector"
+             parent="Tik_TikConnector::connector"
+             action="tikconnector/products/index"
+             resource="Tik_TikConnector::manage_products"/>
+        <add id="Tik_TikConnector::orders"
+             title="Review Orders Sync Status"
+             sortOrder="20"
+             module="Tik_TikConnector"
+             parent="Tik_TikConnector::connector"
+             action="tikconnector/orders/index"
+             resource="Tik_TikConnector::manage_orders"/>
+    </menu>
+</config>
